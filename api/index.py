@@ -1,12 +1,15 @@
 from flask import Flask, request, jsonify
-import requests
 
-# Initialize the Flask app
 app = Flask(__name__)
 
 @app.route("/")
 def home():
     return "Welcome to Emperor Investments!"
+
+from flask import Flask, request, jsonify
+import requests
+
+app = Flask(__name__)
 
 @app.route("/callback", methods=["GET"])
 def callback():
@@ -39,3 +42,7 @@ def callback():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+# For Vercel to recognize the app
+app = app
