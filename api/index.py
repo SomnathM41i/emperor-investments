@@ -22,11 +22,12 @@ def callback():
         }
         try:
             response = requests.post("https://api.smartapi.angelbroking.com/oauth2/token", data=data)
-            app.logger.debug(f"API response: {response.status_code}")  # Log API response status
+            app.logger.debug(f"API response: {response.status_code} - {response.text}")  # Log full response status and body
             if response.status_code == 200:
                 return jsonify(response.json())
             else:
-                return jsonify({"error": "Failed to get access token"}), response.status_code
+                app.logger.error(f"API Error: {response.text}")  # Log detailed error
+                return jsonify({"error": "Failed to get access token", "details": response.text}), response.status_code
         except Exception as e:
             app.logger.error(f"Error: {e}")  # Log any exceptions
             return jsonify({"error": "Request to API failed"}), 500
