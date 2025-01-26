@@ -1,11 +1,18 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route("/")
 def home():
-    return 'Hello, World!'
+    return "Welcome to Emperor Investments!"
 
-@app.route('/about')
-def about():
-    return 'About'
+@app.route("/callback", methods=["GET"])
+def callback():
+    code = request.args.get("code")
+    if code:
+        return jsonify({"message": "Authorization code received", "code": code})
+    else:
+        return jsonify({"error": "No code provided"}), 400
+
+# For Vercel to recognize the app
+app = app
