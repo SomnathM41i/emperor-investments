@@ -14,8 +14,8 @@ def callback():
         response = requests.post(
             "https://api.smartapi.angelbroking.com/oauth2/token",
             data={
-                "client_id": "3GSAN6VG",
-                "client_secret": "20745ec6-716d-4457-ba89-43dda7f03a22",
+                "client_id": "vd46TdQP",
+                "client_secret": "4ddeaa34-c192-4154-85e1-9211266bd663",
                 "code": code,
                 "grant_type": "authorization_code",
                 "redirect_uri": "https://emperor-investments.vercel.app/callback"
