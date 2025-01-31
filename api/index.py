@@ -6,14 +6,14 @@ app = Flask(__name__)
 def home():
     return "Welcome to Emperor Investments!"
 
-@app.route("/login")
+@app.route("/login", methods=["GET"])
 def login_page():
     return render_template("login.html")  # Renders the login page
 
 @app.route("/api/login", methods=["POST"])
 def login():
-    email = request.form.get("email")
-    password = request.form.get("password")
+    email = request.form.get("email")  # Get email from form data
+    password = request.form.get("password")  # Get password from form data
 
     # Validate login (this is just an example; you should hash passwords and check a database)
     if email == "test@example.com" and password == "password123":
