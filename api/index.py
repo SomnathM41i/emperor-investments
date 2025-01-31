@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Welcome to Emperor Investments! Somnath mali "
+     return render_template("login.html") 
 
 @app.route("/login", methods=["GET"])
 def login_page():
