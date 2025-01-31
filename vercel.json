@@ -10,6 +10,10 @@
     {
       "src": "/(.*)",
       "dest": "api/index.py"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.png"
     }
   ]
 }
