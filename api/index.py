@@ -1,13 +1,23 @@
-import requests 
 from flask import Flask, request, jsonify
-import logging
 
-logging.basicConfig(level=logging.DEBUG)
 app = Flask(__name__)
 
 @app.route("/")
 def home():
     return "Welcome to Emperor Investments!"
 
-# For Vercel to recognize the app
-app = app
+# Example of login route
+@app.route("/api/login", methods=["POST"])
+def login():
+    data = request.get_json()
+    email = data.get("email")
+    password = data.get("password")
+
+    # Validate login (this is just an example; you should hash passwords and check a database)
+    if email == "test@example.com" and password == "password123":
+        return jsonify({"message": "Login successful!"}), 200
+    else:
+        return jsonify({"message": "Invalid credentials!"}), 401
+
+if __name__ == "__main__":
+    app.run(debug=True)
