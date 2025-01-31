@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
 
@@ -6,11 +6,14 @@ app = Flask(__name__)
 def home():
     return "Welcome to Emperor Investments!"
 
+@app.route("/login")
+def login_page():
+    return render_template("login.html")  # Renders the login page
+
 @app.route("/api/login", methods=["POST"])
 def login():
-    data = request.get_json()
-    email = data.get("email")
-    password = data.get("password")
+    email = request.form.get("email")
+    password = request.form.get("password")
 
     # Validate login (this is just an example; you should hash passwords and check a database)
     if email == "test@example.com" and password == "password123":
