@@ -11,5 +11,9 @@
       "src": "/(.*)",
       "dest": "api/index.py"
     }
+    {
+      "src": "/login",
+      "dest": "api/index.py"
+    }
   ]
 }
