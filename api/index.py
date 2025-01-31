@@ -6,7 +6,6 @@ app = Flask(__name__)
 def home():
     return "Welcome to Emperor Investments!"
 
-# Example of login route
 @app.route("/api/login", methods=["POST"])
 def login():
     data = request.get_json()
@@ -18,6 +17,10 @@ def login():
         return jsonify({"message": "Login successful!"}), 200
     else:
         return jsonify({"message": "Invalid credentials!"}), 401
+
+@app.route("/dashboard")
+def dashboard():
+    return "Welcome to the Dashboard!"
 
 if __name__ == "__main__":
     app.run(debug=True)
