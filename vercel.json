@@ -10,10 +10,6 @@
     {
       "src": "/(.*)",
       "dest": "app/app.py"
-    },
-    {
-      "src": "/login",
-      "dest": "app/app.py"
     }
   ]
 }
