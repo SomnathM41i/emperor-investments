@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "hello" # Serve index.html as the first file
+     return "hello"
 
 @app.route("/login", methods=["GET"])
 def login_page():
