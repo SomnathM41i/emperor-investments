@@ -1,4 +1,3 @@
-[![See Here](https://vercel.com/button)](https://emperor-investments.vercel.app/)
 
 # Stock Market Price
 
