@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <!-- Include the header -->
+    {% include 'layout/header.html' %}
+
+    <div class="content">
+        {% block content %}
+        <!-- Content will be inserted here from child templates -->
+        {% endblock %}
+    </div>
+
+    <!-- Include the footer -->
+    {% include 'layout/footer.html' %}
+
+</body>
+</html>
