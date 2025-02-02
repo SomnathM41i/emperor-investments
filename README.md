@@ -1,16 +1,14 @@
 
+# work is in progress...!
 # Stock Market Price prediction
 
 
 ## Demo
-
 https://emperor-investments.vercel.app/
 
 ## How it Works
 
-wait for developers 
+work is in progress....!
 
-## Running Locally
 
-## One-Click Deploy
 
