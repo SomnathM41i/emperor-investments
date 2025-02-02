@@ -13,7 +13,5 @@ wait for developers
 
 ## Running Locally
 
-
-
 ## One-Click Deploy
 
